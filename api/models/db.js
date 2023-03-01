@@ -32,6 +32,13 @@ connection.connect(function (err) {
     if (err) throw err;
     console.log("User Table created");
   });
+
+  var sql3 =
+    "CREATE TABLE IF NOT EXISTS contacts (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), email VARCHAR(255) ,message VARCHAR(500))";
+  connection.query(sql3, function (err, result) {
+    if (err) throw err;
+    console.log("Contact Table created");
+  });
 });
 
 module.exports = connection;

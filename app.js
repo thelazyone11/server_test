@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 
 // const RegDeviceRoutes = require("./api/routes/reg_device");
 const UserRoutes = require("./api/routes/user");
+const ContactRouter = require("./api/routes/contact_us");
 app.use(morgan("dev"));
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -27,6 +28,7 @@ app.use((req, res, next) => {
 
 // app.use("/api/regdevice", RegDeviceRoutes);
 app.use("/api/auth", UserRoutes);
+app.use("/api/contactus", ContactRouter);
 
 app.use((req, res, next) => {
   const error = new Error("Not Found");
